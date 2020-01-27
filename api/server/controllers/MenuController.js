@@ -5,6 +5,8 @@ const util = new Util()
 
 class ProductController {
   static async getAllProducts(req, res) {
+    console.log('oi');
+    
     try {
       const allProduct = await ProductService.getAllProducts()
       if (allProduct.length > 0) {
@@ -14,6 +16,8 @@ class ProductController {
       }
       return util.send(res)
     } catch (error) {
+      console.log(error);
+      
       util.setError(400, error)
       return util.send(res)
     }
