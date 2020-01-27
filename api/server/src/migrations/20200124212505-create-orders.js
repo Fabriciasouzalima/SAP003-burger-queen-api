@@ -22,6 +22,12 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+
+      productId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: { model: 'Products', key: 'id' }
       }
     });
   },

@@ -1,15 +1,17 @@
 import database from '../src/models'
 
 class ProductService {
-  static async getAllMenu() {
+  static async getAllProducts() {
     try {
       return await database.Product.findAll()
     } catch (error) {
+      console.log(error);
+      
       throw error
     }
   }
 
-  static async addProduct(newProduct) {
+  static async addProduct(newProduct){
     try {
       return await database.Product.create(newProduct)
     } catch (error) {

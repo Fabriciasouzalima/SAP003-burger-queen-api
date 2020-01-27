@@ -5,7 +5,7 @@ const util = new Util()
 
 class ProductController {
   static async getAllProducts(req, res) {
-    console.log('oi');
+    
     
     try {
       const allProduct = await ProductService.getAllProducts()
@@ -24,7 +24,7 @@ class ProductController {
   }
 
   static async addProduct(req, res) {
-    if (!req.body.name || !typeof(req.body.is_alive)==='boolean' ) {
+    if (!req.body.item|| !req.body.price || !typeof(req.body.is_alcoholic)==='boolean' ) {
       util.setError(400, 'Please provide complete details')
       return util.send(res)
     }
