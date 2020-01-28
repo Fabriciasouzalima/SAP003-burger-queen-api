@@ -50,13 +50,13 @@ class ProductService {
 
   static async deleteProduct(id) {
     try {
-      const ProductToDelete = await database.Product.findOne({ where: { id: Number(id) } })
+      const productToDelete = await database.Product.findOne({ where: { id: Number(id) } })
 
       if (productToDelete) {
-        const deletedAuthor = await database.Product.destroy({
+        const deletedProduct = await database.Product.destroy({
           where: { id: Number(id) }
         })
-        return deletedAuthor
+        return deletedProduct
       }
       return null
     } catch (error) {

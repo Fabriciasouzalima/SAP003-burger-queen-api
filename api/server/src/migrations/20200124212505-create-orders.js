@@ -8,11 +8,11 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      table_id: {
+      tableId: {
         type: Sequelize.INTEGER,
         //references: {model:'',key:'id'} 
       },
-      status_order: {
+      statusOrder: {
         type: Sequelize.STRING
       },
       createdAt: {

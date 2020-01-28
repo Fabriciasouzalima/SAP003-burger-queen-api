@@ -24,7 +24,7 @@ class ProductController {
   }
 
   static async addProduct(req, res) {
-    if (!req.body.item|| !req.body.price || !typeof(req.body.is_alcoholic)==='boolean' ) {
+    if (!req.body.item|| !req.body.price || !typeof(req.body.isAlcoholic)==='boolean' ) {
       util.setError(400, 'Please provide complete details')
       return util.send(res)
     }
