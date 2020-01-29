@@ -10,7 +10,7 @@ module.exports = {
       },
       tableId: {
         type: Sequelize.INTEGER,
-        //references: {model:'',key:'id'} 
+        references: {model:'Tables',key:'id'} 
       },
       statusOrder: {
         type: Sequelize.STRING

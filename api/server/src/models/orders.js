@@ -5,7 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     statusOrder: DataTypes.STRING
   }, {});
   Orders.associate = function(models) {
-    Order.hasMany(models.Order_Itens)
+    Order.hasMany(models.Itens);
+    Order.belongsTo(models.Table);
   };
   return Orders;
 };
