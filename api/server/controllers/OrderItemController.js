@@ -1,4 +1,4 @@
-import OrderItemService from '../services/OrderItemService';
+import OrderItemService from '../services/OrdemItemService.js';
 import Util from '../utils/Utils';
 
 const util = new Util()

@@ -23,7 +23,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       },
-
+      OrderId:{
+        type: Sequelize.INTEGER,
+      },
       productId: {
         allowNull: false,
         type: Sequelize.INTEGER,
