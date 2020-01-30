@@ -3,7 +3,7 @@ import database from '../src/models';
 class OrderService {
   static async getAllOrders() {
     try {
-      return await database.Order.findAll()
+      return await database.Orders.findAll()
     } catch (error) {
       throw error
     }
@@ -11,7 +11,7 @@ class OrderService {
 
   static async addOrder(newOrder) {
     try {
-      return await database.Order.create(newOrder)
+      return await database.Orders.create(newOrder)
     } catch (error) {
       throw error
     }
@@ -19,12 +19,12 @@ class OrderService {
 
   static async updateOrder(id, updateOrder) {
     try {
-      const orderToUpdate = await database.Order.findOne({
+      const orderToUpdate = await database.Orders.findOne({
         where: { id: Number(id) }
       })
 
       if (orderToUpdate) {
-        await database.Order.update(updateOrder, { where: { id: Number(id) } })
+        await database.Orders.update(updateOrder, { where: { id: Number(id) } })
 
         return updateOrder
       }
@@ -36,7 +36,7 @@ class OrderService {
 
   static async getOrder(id) {
     try {
-      const theOrder = await database.Order.findOne({
+      const theOrder = await database.Orders.findOne({
         where: { id: Number(id) }
       })
 
@@ -48,10 +48,10 @@ class OrderService {
 
     static async deleteOrder(id) {
       try {
-        const orderToDelete = await database.Order.findOne({ where: { id: Number(id) } })
+        const orderToDelete = await database.Orders.findOne({ where: { id: Number(id) } })
 
         if (orderToDelete) {
-          const deletedOrder = await database.Order.destroy({
+          const deletedOrder = await database.Orders.destroy({
             where: { id: Number(id) }
           })
           return deletedOrder

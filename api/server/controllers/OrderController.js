@@ -4,9 +4,10 @@ import Util from '../utils/Utils';
 const util = new Util()
 
 class OrderController {
-  static async getAllOrders(req, res) {
+  static async getAllOrders(req, res) {   
+    
     try {
-      const allOrders = await OrderService.getAllOrders()
+      const allOrders = await OrderService.getAllOrders()     
       if (allOrders.length > 0) {
         util.setSuccess(200, 'Orders retrieved', allOrders);
       } else {
@@ -14,6 +15,7 @@ class OrderController {
       }
       return util.send(res)
     } catch (error) {
+      console.log(error,'socorro');
       util.setError(400, error)
       return util.send(res)
     }
