@@ -20,7 +20,7 @@ class TableController {
   }
 
   static async addTable(req, res) {
-    if (!req.body.number) {
+    if (!req.body.tableNumber) {
       util.setError(400, 'Please provide complete details')
       return util.send(res)
     }
