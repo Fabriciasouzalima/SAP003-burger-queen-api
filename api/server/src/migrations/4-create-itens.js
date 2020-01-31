@@ -25,11 +25,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       },
-      productId: {
-        allowNull: false,
-        type: Sequelize.INTEGER,
-        references: { model: 'Products', key: 'id' }
-      }
     });
   },
   down: (queryInterface, Sequelize) => {
